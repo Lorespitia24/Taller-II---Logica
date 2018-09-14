@@ -29,15 +29,15 @@ public class ApplicationConfig extends Application {
      * If required, comment out calling this method in getClasses().
      */
     private void addRestResourceClasses(Set<Class<?>> resources) {
-        resources.add(co.edu.uptc.sw2.proyectoangular.ServicioCarrera.class);
-        resources.add(co.edu.uptc.sw2.proyectoangular.ServicioEjemplo.class);
-        resources.add(co.edu.uptc.sw2.proyectoangular.ServicioEstudiante.class);
-        resources.add(co.edu.uptc.sw2.proyectoangular.ServicioFacultad.class);
-        resources.add(co.edu.uptc.sw2.proyectoangular.ServicioHorario.class);
-        resources.add(co.edu.uptc.sw2.proyectoangular.ServicioMateria.class);
-        resources.add(co.edu.uptc.sw2.proyectoangular.ServicioMatricula.class);
-        resources.add(co.edu.uptc.sw2.proyectoangular.ServicioMunicipio.class);
-        resources.add(co.edu.uptc.sw2.proyectoangular.ServicioProfesor.class);
+        resources.add(co.edu.uptc.sw2.proyectoangular.servicios.ServicioCarrera.class);
+        resources.add(co.edu.uptc.sw2.proyectoangular.servicios.ServicioEjemplo.class);
+        resources.add(co.edu.uptc.sw2.proyectoangular.servicios.ServicioEstudiante.class);
+        resources.add(co.edu.uptc.sw2.proyectoangular.servicios.ServicioFacultad.class);
+        resources.add(co.edu.uptc.sw2.proyectoangular.servicios.ServicioHorario.class);
+        resources.add(co.edu.uptc.sw2.proyectoangular.servicios.ServicioMateria.class);
+        resources.add(co.edu.uptc.sw2.proyectoangular.servicios.ServicioMatricula.class);
+        resources.add(co.edu.uptc.sw2.proyectoangular.servicios.ServicioMunicipio.class);
+        resources.add(co.edu.uptc.sw2.proyectoangular.servicios.ServicioProfesor.class);
     }
     
 }

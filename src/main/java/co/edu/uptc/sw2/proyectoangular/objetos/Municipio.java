@@ -3,23 +3,19 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package co.edu.uptc.sw2.proyectoangular.Entities;
+package co.edu.uptc.sw2.proyectoangular.objetos;
 
 /**
  *
  * @author Lorespitia_24
  */
-public class Profesor {
+public class Municipio {
     private int id;
 private String nombre;
-private String apellido;
-private int documento;
 
-    public Profesor(int id, String nombre, String apellido, int documento) {
+    public Municipio(int id, String nombre) {
         this.id = id;
         this.nombre = nombre;
-        this.apellido = apellido;
-        this.documento = documento;
     }
 
     public int getId() {
@@ -37,21 +33,5 @@ private int documento;
     public void setNombre(String nombre) {
         this.nombre = nombre;
     }
-
-    public String getApellido() {
-        return apellido;
-    }
-
-    public void setApellido(String apellido) {
-        this.apellido = apellido;
-    }
-
-    public int getDocumento() {
-        return documento;
-    }
-
-    public void setDocumento(int documento) {
-        this.documento = documento;
-    }
-
+    
 }

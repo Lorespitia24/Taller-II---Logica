@@ -3,29 +3,31 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package co.edu.uptc.sw2.proyectoangular;
+package co.edu.uptc.sw2.proyectoangular.logica;
 
-import co.edu.uptc.sw2.proyectoangular.Entities.Carrera;
-import co.edu.uptc.sw2.proyectoangular.Entities.Estudiante;
-import co.edu.uptc.sw2.proyectoangular.Entities.Facultad;
-import co.edu.uptc.sw2.proyectoangular.Entities.Horario;
-import co.edu.uptc.sw2.proyectoangular.Entities.Materia;
-import co.edu.uptc.sw2.proyectoangular.Entities.Matricula;
-import co.edu.uptc.sw2.proyectoangular.Entities.Municipio;
-import co.edu.uptc.sw2.proyectoangular.Entities.Profesor;
+import co.edu.uptc.sw2.proyectoangular.objetos.Carrera;
+import co.edu.uptc.sw2.proyectoangular.objetos.Estudiante;
+import co.edu.uptc.sw2.proyectoangular.objetos.Facultad;
+import co.edu.uptc.sw2.proyectoangular.objetos.Horario;
+import co.edu.uptc.sw2.proyectoangular.objetos.Materia;
+import co.edu.uptc.sw2.proyectoangular.objetos.Matricula;
+import co.edu.uptc.sw2.proyectoangular.objetos.Municipio;
+import co.edu.uptc.sw2.proyectoangular.objetos.Profesor;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.GregorianCalendar;
 import java.util.List;
+import javax.annotation.PostConstruct;
+import javax.ejb.Singleton;
 
 /**
  *
  * @author RA302
  */
+@Singleton
 public class Almacenamiento {
 
-    private static final Almacenamiento instancia = new Almacenamiento();
     private List<Estudiante> listaEstudiantes = new ArrayList<Estudiante>();
     private List<Carrera> listaCarrera = new ArrayList<Carrera>();
     private List<Facultad> listaFacultad = new ArrayList<Facultad>();
@@ -37,11 +39,8 @@ public class Almacenamiento {
     private List<Matricula> listaMatricula = new ArrayList<Matricula>();
     
     
-    public static Almacenamiento getInstancia() {
-        return instancia;
-    }
-
-    private Almacenamiento() {
+  @PostConstruct
+    private void Almacenamiento() {
         //lista estudiantes
         Estudiante e1 = new Estudiante(3, "pepito", "a@a.com", "ing software", null);
         Estudiante e2 = new Estudiante(1, "Juan", "a@a.com", "ing software", null);

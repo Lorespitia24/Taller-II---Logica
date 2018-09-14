@@ -3,10 +3,10 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package co.edu.uptc.sw2.proyectoangular;
+package co.edu.uptc.sw2.proyectoangular.servicios;
 
-import co.edu.uptc.sw2.proyectoangular.Entities.RespuestaEstudiante;
-import co.edu.uptc.sw2.proyectoangular.Entities.Estudiante;
+import co.edu.uptc.sw2.proyectoangular.objetos.RespuestaEstudiante;
+import co.edu.uptc.sw2.proyectoangular.objetos.Estudiante;
 import java.util.Date;
 import javax.ws.rs.GET;
 import javax.ws.rs.POST;

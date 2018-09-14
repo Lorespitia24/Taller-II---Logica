@@ -3,33 +3,24 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package co.edu.uptc.sw2.proyectoangular.Entities;
+package co.edu.uptc.sw2.proyectoangular.objetos;
 
 /**
  *
  * @author Lorespitia_24
  */
-public class Materia {
+public class Profesor {
     private int id;
 private String nombre;
-private int creditos;
-private Horario horario;
+private String apellido;
+private int documento;
 
-       public Materia(int id, String nombre, int creditos, Horario horario) {
+    public Profesor(int id, String nombre, String apellido, int documento) {
         this.id = id;
         this.nombre = nombre;
-        this.creditos = creditos;
-        this.horario = horario;
+        this.apellido = apellido;
+        this.documento = documento;
     }
-
-    public Horario getHorario() {
-        return horario;
-    }
-
-    public void setHorario(Horario horario) {
-        this.horario = horario;
-    }
-
 
     public int getId() {
         return id;
@@ -47,13 +38,20 @@ private Horario horario;
         this.nombre = nombre;
     }
 
-    public int getCreditos() {
-        return creditos;
+    public String getApellido() {
+        return apellido;
     }
 
-    public void setCreditos(int creditos) {
-        this.creditos = creditos;
+    public void setApellido(String apellido) {
+        this.apellido = apellido;
     }
 
+    public int getDocumento() {
+        return documento;
+    }
+
+    public void setDocumento(int documento) {
+        this.documento = documento;
+    }
 
 }
