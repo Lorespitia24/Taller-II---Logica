@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package co.edu.uptc.sw2.proyectoangular.logica;
 
 import co.edu.uptc.sw2.proyectoangular.objetos.Carrera;
@@ -14,9 +9,7 @@ import co.edu.uptc.sw2.proyectoangular.objetos.Matricula;
 import co.edu.uptc.sw2.proyectoangular.objetos.Municipio;
 import co.edu.uptc.sw2.proyectoangular.objetos.Profesor;
 import java.util.ArrayList;
-import java.util.Calendar;
 import java.util.Date;
-import java.util.GregorianCalendar;
 import java.util.List;
 import javax.annotation.PostConstruct;
 import javax.ejb.Singleton;
@@ -28,6 +21,7 @@ import javax.ejb.Singleton;
 @Singleton
 public class Almacenamiento {
 
+    private static final Almacenamiento instancia = new Almacenamiento();
     private List<Estudiante> listaEstudiantes = new ArrayList<Estudiante>();
     private List<Carrera> listaCarrera = new ArrayList<Carrera>();
     private List<Facultad> listaFacultad = new ArrayList<Facultad>();
@@ -38,7 +32,7 @@ public class Almacenamiento {
     private List<Municipio> listaMunicipio = new ArrayList<Municipio>();
     private List<Matricula> listaMatricula = new ArrayList<Matricula>();
     
-    
+ 
   @PostConstruct
     private void Almacenamiento() {
         //lista estudiantes
@@ -53,8 +47,10 @@ public class Almacenamiento {
         listaEstudiantes.add(e1);
         
         //lista profesores
-        listaProfesor.add(new Profesor(1, "Felipe", "Gonzales", 0));
-        listaProfesor.add(new Profesor(2, "Andres", "Gonzales", 1));
+        Profesor p1=new Profesor(1, "Felipe", "Gonzales", 0);
+        Profesor p2=new Profesor(2, "Andres", "Gonzales", 1);
+        listaProfesor.add(p1);
+        listaProfesor.add(p2);
         
         //lista facultad
         Facultad facultad=new Facultad(1, "Salud");
@@ -63,8 +59,10 @@ public class Almacenamiento {
         listaFacultad.add(facultad1);
         
         //lista carrera
-        listaCarrera.add(new Carrera(1, "Sistemas", facultad1));
-        listaCarrera.add(new Carrera(1, "Medicina", facultad));
+        Carrera c1=new Carrera(1, "Sistemas", facultad1);
+                Carrera c2=new Carrera(1, "Medicina", facultad);
+        listaCarrera.add(c1);
+        listaCarrera.add(c2);
         
         //lista municipio
         listaMunicipio.add(new Municipio(1, "Paz del Rio"));
@@ -72,9 +70,14 @@ public class Almacenamiento {
         listaMunicipio.add(new Municipio(3, "Tibana"));
         
         //lista materias
-        Materia materia1 = new Materia(1, "Calculo", 2, (new Horario(1,"Lunes", Calendar.getInstance().getTime(), Calendar.getInstance().getTime())));
+        Date d1=new Date();
+        Materia materia1 = new Materia(1, "Calculo", 2,c1,p1,
+                
+                new Horario(1,"Lunes",d1,d1));
+         Materia materia2 = new Materia(2, "Fisica", 8,c2,p2,
+                new Horario(1,"Martes",new Date(),new Date()));
         listaMateria.add(materia1);
-        
+        listaMateria.add(materia2);
         //horarios
         
         

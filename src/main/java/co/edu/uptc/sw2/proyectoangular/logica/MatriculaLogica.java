@@ -5,7 +5,6 @@
  */
 package co.edu.uptc.sw2.proyectoangular.logica;
 
-import co.edu.uptc.sw2.proyectoangular.objetos.Carrera;
 import co.edu.uptc.sw2.proyectoangular.objetos.Matricula;
 import java.util.List;
 import javax.ejb.EJB;

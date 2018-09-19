@@ -5,8 +5,6 @@
  */
 package co.edu.uptc.sw2.proyectoangular.servicios;
 
-import co.edu.uptc.sw2.proyectoangular.logica.Almacenamiento;
-import co.edu.uptc.sw2.proyectoangular.logica.MunicipioLogica;
 import co.edu.uptc.sw2.proyectoangular.logica.ProfesorLogica;
 import co.edu.uptc.sw2.proyectoangular.objetos.Profesor;
 import java.util.List;

@@ -5,8 +5,6 @@
  */
 package co.edu.uptc.sw2.proyectoangular.servicios;
 
-import co.edu.uptc.sw2.proyectoangular.logica.Almacenamiento;
-import co.edu.uptc.sw2.proyectoangular.logica.FacultadLogica;
 import co.edu.uptc.sw2.proyectoangular.logica.HorarioLogica;
 import co.edu.uptc.sw2.proyectoangular.objetos.Horario;
 import java.util.List;

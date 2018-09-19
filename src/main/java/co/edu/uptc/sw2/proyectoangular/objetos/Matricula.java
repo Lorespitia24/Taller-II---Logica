@@ -5,8 +5,6 @@
  */
 package co.edu.uptc.sw2.proyectoangular.objetos;
 
-import java.util.Date;
-
 /**
  *
  * @author Lorespitia_24

@@ -5,8 +5,6 @@
  */
 package co.edu.uptc.sw2.proyectoangular.servicios;
 
-import co.edu.uptc.sw2.proyectoangular.logica.Almacenamiento;
-import co.edu.uptc.sw2.proyectoangular.logica.MateriaLogica;
 import co.edu.uptc.sw2.proyectoangular.logica.MatriculaLogica;
 import co.edu.uptc.sw2.proyectoangular.objetos.Matricula;
 import java.util.List;

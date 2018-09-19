@@ -5,9 +5,7 @@
  */
 package co.edu.uptc.sw2.proyectoangular.servicios;
 
-import co.edu.uptc.sw2.proyectoangular.logica.Almacenamiento;
 import co.edu.uptc.sw2.proyectoangular.logica.CarreraLogica;
-import co.edu.uptc.sw2.proyectoangular.logica.EstudianteLogica;
 import co.edu.uptc.sw2.proyectoangular.objetos.Carrera;
 import java.util.List;
 import javax.ejb.EJB;
@@ -32,11 +30,20 @@ public class ServicioCarrera {
     
     @POST
     public Carrera guardarCarrera(Carrera carrera){
-        
         carrera.setId(carreraLogica.getListaCarrera().size() + 1);
         carreraLogica.getListaCarrera().add(carrera);
         return carrera;
     }
-    
+    @POST
+    @Path("editarCarrera")
+    public void editarCarrera(Carrera carrera) {
+        carreraLogica.editarCarrera(carrera);
+    }
+
+    @POST
+    @Path("eliminarCarrera")
+    public void eliminarCarrera(int id) {
+        carreraLogica.eliminarCarrera(id);
+    }
   
 }

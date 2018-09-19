@@ -5,8 +5,6 @@
  */
 package co.edu.uptc.sw2.proyectoangular.servicios;
 
-import co.edu.uptc.sw2.proyectoangular.logica.Almacenamiento;
-import co.edu.uptc.sw2.proyectoangular.logica.CarreraLogica;
 import co.edu.uptc.sw2.proyectoangular.logica.FacultadLogica;
 import co.edu.uptc.sw2.proyectoangular.objetos.Facultad;
 import java.util.List;
@@ -20,25 +18,35 @@ import javax.ws.rs.Path;
  *
  * @author RA302
  */
-
 @Path("ServicioFacultad")
 @Stateless
 public class ServicioFacultad {
-      @EJB
+
+    @EJB
     private FacultadLogica facultadLogica;
     
     @GET
-    public List<Facultad> consultarFacultad(){
+    public List<Facultad> consultarFacultad() {
         return facultadLogica.getListaFacultad();
     }
     
     @POST
-    public Facultad guardarFacultad(Facultad facultad){
-        
+    public Facultad guardarFacultad(Facultad facultad) {
         facultad.setId(facultadLogica.getListaFacultad().size() + 1);
         facultadLogica.getListaFacultad().add(facultad);
         return facultad;
     }
+
+    @POST
+    @Path("editarFacultad")
+    public void editarFacultad(Facultad facultad) {
+        facultadLogica.editarFacultad(facultad);
+    }
+
+    @POST
+    @Path("eliminarFacultad")
+    public void eliminarFacultad(int id) {
+        facultadLogica.eliminarFacultad(id);
+    }
     
-  
 }

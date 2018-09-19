@@ -5,10 +5,7 @@
  */
 package co.edu.uptc.sw2.proyectoangular.servicios;
 
-import co.edu.uptc.sw2.proyectoangular.logica.Almacenamiento;
-import co.edu.uptc.sw2.proyectoangular.logica.HorarioLogica;
 import co.edu.uptc.sw2.proyectoangular.logica.MateriaLogica;
-import co.edu.uptc.sw2.proyectoangular.objetos.Estudiante;
 import co.edu.uptc.sw2.proyectoangular.objetos.Materia;
 import java.util.List;
 import javax.ejb.EJB;
