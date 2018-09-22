@@ -9,7 +9,10 @@ import javax.ws.rs.GET;
 import javax.ws.rs.POST;
 import javax.ws.rs.Path;
 
-
+/**
+ * 
+ * @author Viviana Lizarazo
+ */
 
 @Path("ServicioEstudiante")
 @Stateless
@@ -27,6 +30,18 @@ public class ServicioEstudiante {
         estudianteLogica.getListaEstudiante().add(estudiante);
         return estudiante;
     }
-    //crear metodos para la crud
+ 
+    //metodos
+    @POST
+    @Path("editarEstudiante")
+    public void editarEstudiante(Estudiante estudiante) {
+        estudianteLogica.editarEstudiante(estudiante);
+    }
+
+    @POST
+    @Path("eliminarEstudiante")
+    public void eliminarEstudiante(int id) {
+        estudianteLogica.eliminarEstudiante(id);
+    }
   
 }

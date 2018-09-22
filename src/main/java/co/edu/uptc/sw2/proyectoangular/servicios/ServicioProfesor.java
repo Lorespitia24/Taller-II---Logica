@@ -37,6 +37,17 @@ public class ServicioProfesor {
         profesorLogica.getListaProfesor().add(profesor);
         return profesor;
     }
-    
+    //metodos
+        @POST
+    @Path("editarProfesor")
+    public void editarFacultad(Profesor profesor) {
+        profesorLogica.editarProfesor(profesor);
+    }
+
+    @POST
+    @Path("eliminarProfesor")
+    public void eliminarProfesor(int id) {
+        profesorLogica.eliminarProfesor(id);
+    }
   
 }

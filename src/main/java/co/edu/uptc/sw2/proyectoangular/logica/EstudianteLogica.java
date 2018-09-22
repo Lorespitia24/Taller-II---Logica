@@ -6,10 +6,7 @@ import java.util.List;
 import javax.ejb.EJB;
 import javax.ejb.Stateless;
 
-/**
- *
- * @author Lorespitia_24
- */
+
 @Stateless
 public class EstudianteLogica {
     @EJB
@@ -18,9 +15,12 @@ public class EstudianteLogica {
     public List<Estudiante> getListaEstudiante(){
         return almacenamiento.getListaEstudiante();
     }
+    //nuevo estudiante
     public Estudiante nuevoEstudiante(int id, String nombre,String correo,String curso,Matricula matricula){
     return new Estudiante(id, nombre, correo, curso, matricula);
     }
+    
+    //editar estudiante
     public void editarEstudiante(Estudiante estudianteAModif){
         for (Estudiante estudiante : almacenamiento.getListaEstudiante()) {
             if(estudiante.getId()==estudianteAModif.getId()){
@@ -32,6 +32,7 @@ public class EstudianteLogica {
         }
         
     }
+    //eliminar estudiante
     public void eliminarEstudiante(int id){
         for (Estudiante estudiante : almacenamiento.getListaEstudiante()) {
             if(estudiante.getId()==id){
