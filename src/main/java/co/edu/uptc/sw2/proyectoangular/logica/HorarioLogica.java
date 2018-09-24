@@ -6,6 +6,7 @@
 package co.edu.uptc.sw2.proyectoangular.logica;
 
 import co.edu.uptc.sw2.proyectoangular.objetos.Horario;
+import java.util.Date;
 import java.util.List;
 import javax.ejb.EJB;
 import javax.ejb.Stateless;
@@ -22,4 +23,33 @@ public class HorarioLogica {
     public List<Horario> getListaHorario(){
         return almacenamiento.getListaHorario();
     }
+    
+     //nuevo Materia
+    public Horario nuevoHorario(int id, String dia,Date horaInicio, Date horaFin){
+    return new Horario(id, dia, horaInicio, horaFin);
+    }
+    
+    //editar Materia
+    public void editarHorario(Horario horarioEdit){
+        for (Horario horario : almacenamiento.getListaHorario()) {
+            if(horario.getId()==horarioEdit.getId()){
+            almacenamiento.getListaHorario().remove(horario);
+            almacenamiento.getListaHorario().add(horarioEdit);
+            break;
+            }
+            
+        }
+        
+    }
+    //eliminar Horario
+    public void eliminarHorario(int id){
+        for (Horario horario : almacenamiento.getListaHorario()) {
+            if(horario.getId()==id){
+           almacenamiento.getListaHorario().remove(id);
+           break;
+            }
+            
+        }
+    }
+    
 }

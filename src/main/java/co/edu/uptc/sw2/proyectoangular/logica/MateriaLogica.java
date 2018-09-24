@@ -5,7 +5,10 @@
  */
 package co.edu.uptc.sw2.proyectoangular.logica;
 
+import co.edu.uptc.sw2.proyectoangular.objetos.Carrera;
+import co.edu.uptc.sw2.proyectoangular.objetos.Horario;
 import co.edu.uptc.sw2.proyectoangular.objetos.Materia;
+import co.edu.uptc.sw2.proyectoangular.objetos.Profesor;
 import java.util.List;
 import javax.ejb.EJB;
 import javax.ejb.Stateless;
@@ -21,5 +24,33 @@ public class MateriaLogica {
     
     public List<Materia> getListaMateria(){
         return almacenamiento.getListaMateria();
+    }
+    
+    //nuevo Materia
+    public Materia nuevoMateria(int id, String nombre,int creditos,Carrera carrera,Profesor profesor,Horario horario){
+    return new Materia(id, nombre, creditos, carrera, profesor, horario);
+    }
+    
+    //editar Materia
+    public void editarMateria(Materia materiaEdit){
+        for (Materia materia : almacenamiento.getListaMateria()) {
+            if(materia.getId()==materiaEdit.getId()){
+            almacenamiento.getListaMateria().remove(materia);
+            almacenamiento.getListaMateria().add(materiaEdit);
+            break;
+            }
+            
+        }
+        
+    }
+    //eliminar Materia
+    public void eliminarMateria(int id){
+        for (Materia materia : almacenamiento.getListaMateria()) {
+            if(materia.getId()==id){
+           almacenamiento.getListaMateria().remove(id);
+           break;
+            }
+            
+        }
     }
 }

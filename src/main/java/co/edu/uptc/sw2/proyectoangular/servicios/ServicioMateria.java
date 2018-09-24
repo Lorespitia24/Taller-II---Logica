@@ -6,6 +6,7 @@
 package co.edu.uptc.sw2.proyectoangular.servicios;
 
 import co.edu.uptc.sw2.proyectoangular.logica.MateriaLogica;
+import co.edu.uptc.sw2.proyectoangular.objetos.Estudiante;
 import co.edu.uptc.sw2.proyectoangular.objetos.Materia;
 import java.util.List;
 import javax.ejb.EJB;
@@ -35,6 +36,19 @@ public class ServicioMateria {
         materia.setId(materiaLogica.getListaMateria().size() + 1);
         materiaLogica.getListaMateria().add(materia);
         return materia;
+    }
+ 
+    //metodos
+    @POST
+    @Path("editarMateria")
+    public void editarEstudiante(Materia materia) {
+        materiaLogica.editarMateria(materia);
+    }
+
+    @POST
+    @Path("eliminarMateria")
+    public void eliminarMateria(int id) {
+        materiaLogica.eliminarMateria(id);
     }
     
   

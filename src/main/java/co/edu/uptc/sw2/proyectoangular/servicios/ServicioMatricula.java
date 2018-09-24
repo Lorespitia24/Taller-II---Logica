@@ -31,12 +31,23 @@ public class ServicioMatricula {
     }
     
     @POST
-    public Matricula guardarEstudiante(Matricula matricula){
+    public Matricula guardarMatricula(Matricula matricula){
         
         matricula.setId(matriculaLogica.getListaMatricula().size() + 1);
         matriculaLogica.getListaMatricula().add(matricula);
         return matricula;
     }
-    
+    @POST
+    @Path("editarMatricula")
+    public void editarMatricula(Matricula matricula) {
+        matriculaLogica.editarMatricula(matricula);
+    }
+
+    @POST
+    @Path("eliminarMatricula")
+    public void eliminarMatricula(int id) {
+        matriculaLogica.eliminarMatricula(id);
+    }
+      
   
 }

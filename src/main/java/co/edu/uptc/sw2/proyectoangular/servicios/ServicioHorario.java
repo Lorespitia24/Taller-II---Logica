@@ -31,12 +31,24 @@ public class ServicioHorario {
     }
     
     @POST
-    public Horario guardarEstudiante(Horario horario){
+    public Horario guardarHorario(Horario horario){
         
         horario.setId(horarioLogica.getListaHorario().size() + 1);
         horarioLogica.getListaHorario().add(horario);
         return horario;
     }
-    
+     //metodos
+    @POST
+    @Path("editarHorario")
+    public void editarHorario(Horario horario) {
+        horarioLogica.editarHorario(horario);
+    }
+
+    @POST
+    @Path("eliminarHorario")
+    public void eliminarHorario(int id) {
+        horarioLogica.eliminarHorario(id);
+    }
+      
   
 }
